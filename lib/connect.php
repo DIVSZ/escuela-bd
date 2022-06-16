@@ -8,10 +8,10 @@ $connect=mysqli_connect($host, $user, $password, $db);
 
 if($connect)
     {
-    echo "conexión exitosa";
+    echo "Conexión exitosa";
     }
     else
     {
-    echo "conexión fallida";
+    echo "Conexión fallida";
     }
 ?>

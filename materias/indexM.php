@@ -14,11 +14,11 @@ $resultado = mysqli_query($connect, $consulta);
     <title>materias - escuela-bd</title>
 </head>
 <body>
-    <h1>materias</h1> <table><thead>
-        <tr><th>id</th>
-        <th>nombre</th>
-        <th>cuatrimestre</th>
-        <th>licenciatura</th>
+    <h1>MATERIAS</h1> <table><thead>
+        <tr><th>ID</th>
+        <th>NOMBRE</th>
+        <th>CUATRIMESTRE</th>
+        <th>LICENCIATURA</th>
 
         </tr>
     </thead>
@@ -38,6 +38,6 @@ $resultado = mysqli_query($connect, $consulta);
         ?>
     </tbody>
     </table>
-
+    
 </body>
 </html>

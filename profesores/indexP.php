@@ -1,6 +1,6 @@
 <?php
 require_once("../lib/connect.php");
-$consulta= "SELECT * FROM materias";
+$consulta= "SELECT * FROM profesores";
 $resultado = mysqli_query($connect, $consulta);
 
 ?>
@@ -14,15 +14,13 @@ $resultado = mysqli_query($connect, $consulta);
     <title>profesores - escuela-bd</title>
 </head>
 <body>
-    <h1>materias</h1> <table><thead>
-        <tr><th>id</th>
-        <th>nombre</th>
-        <th>apellido</th>
-        <th>telefono</th>
-        <th>correo</th>
-        <th>licenciatura</th>
-        <th>cuatrimestre</th>
-        <th>estatus</th>
+    <h1>PROFESORES</h1> <table><thead>
+        <tr><th>ID</th>
+        <th>NOMBRE</th>
+        <th>APELLIDOS</th>
+        <th>TELÉFONO</th>
+        <th>CORREO ELECTRÓNICO</th>
+        <th>ESTATUS</th>
 
         </tr>
     </thead>
@@ -37,8 +35,6 @@ $resultado = mysqli_query($connect, $consulta);
             <td><?php echo $fila["apellido"]?> </td>
             <td><?php echo $fila["telefono"]?> </td>
             <td><?php echo $fila["correo"]?> </td>
-            <td><?php echo $fila["licenciatura"]?> </td>
-            <td><?php echo $fila["cuatrimestre"]?> </td>
             <td><?php echo $fila["estatus"]?> </td>
         </tr>
         <?php    
