@@ -1,7 +1,7 @@
 <?php
-require_once("../lib/connect.php");
-$consulta= "SELECT * FROM alumnos";
-$resultado = mysqli_query($connect, $consulta);
+
+require_once("../lib/functions.php");
+$users = get_all_alumnos ($connect);
 
 ?>
 
@@ -14,8 +14,9 @@ $resultado = mysqli_query($connect, $consulta);
     <title>alumnos - escuela-bd</title>
 </head>
 <body>
-    <h1>ALUMNOS</h1> <table><thead>
-        <tr><th>ID</th>
+    <h1>ALUMNOS <br><small> <a href = "../alumnos/formulario.php">insertar alumno</a></small></h1><table><thead>
+    <br>    
+    <tr><th>ID</th>
         <th>NOMBRE</th>
         <th>APELLIDOS</th>
         <th>TELÉFONO</th>
@@ -24,11 +25,12 @@ $resultado = mysqli_query($connect, $consulta);
         <th>CUATRIMESTRE</th>
         <th>ESTATUS</th>
 
+
         </tr>
     </thead>
     <tbody>
         <?php
-        while ($fila = mysqli_fetch_array($resultado))
+        while ($fila = mysqli_fetch_array($users))
         {
         ?>
         <tr>
@@ -40,12 +42,17 @@ $resultado = mysqli_query($connect, $consulta);
             <td><?php echo $fila["licenciatura"]?> </td>
             <td><?php echo $fila["cuatrimestre"]?> </td>
             <td><?php echo $fila["estatus"]?> </td>
+            <td><a href="detail.php?id=<?php echo $fila['id']; ?>">Detalle</a></td>
+            <td><a href="formulario_update.php?id=<?php echo $fila['id']; ?>">Editar</a></td>
+            <td><a href="formulario_delete.php?id=<?php echo $fila['id']; ?>">Eliminar</a></td>
+            
         </tr>
         <?php    
         }
         ?>
     </tbody>
     </table>
+  
 
 </body>
 </html>

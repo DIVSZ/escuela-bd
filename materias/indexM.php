@@ -1,7 +1,9 @@
 <?php
-require_once("../lib/connect.php");
-$consulta= "SELECT * FROM materias";
-$resultado = mysqli_query($connect, $consulta);
+
+require_once("../lib/functions.php");
+$users = get_all_materias ($connect);
+
+
 
 ?>
 
@@ -14,7 +16,7 @@ $resultado = mysqli_query($connect, $consulta);
     <title>materias - escuela-bd</title>
 </head>
 <body>
-    <h1>MATERIAS</h1> <table><thead>
+    <h1>MATERIAS<br><small> <a href = "../materias/formularioM.php">insertar materia</a></small></h1> <table><thead>
         <tr><th>ID</th>
         <th>NOMBRE</th>
         <th>CUATRIMESTRE</th>
@@ -24,7 +26,7 @@ $resultado = mysqli_query($connect, $consulta);
     </thead>
     <tbody>
         <?php
-        while ($fila = mysqli_fetch_array($resultado))
+        while ($fila = mysqli_fetch_array($users))
         {
         ?>
         <tr>
@@ -32,6 +34,9 @@ $resultado = mysqli_query($connect, $consulta);
             <td><?php echo $fila["nombre"]?> </td>
             <td><?php echo $fila["cuatrimestre"]?> </td>
             <td><?php echo $fila["licenciatura"]?> </td>
+            <td><a href="detailM.php?id=<?php echo $fila['id']; ?>">Detalle</a></td>
+            <td><a href="formularioM_update.php?id=<?php echo $fila['id']; ?>">Editar</a></td>
+            <td><a href="formularioM_delete.php?id=<?php echo $fila['id']; ?>">Eliminar</a></td>
         </tr>
         <?php    
         }
