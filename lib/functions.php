@@ -164,7 +164,5 @@ delete_profesores($name,$apellido,$telefono,$correo,$estatus,$id)
     $resultado = mysqli_query($connect, $consulta);
 }
 
-//return $resultado;
-
 
 ?>
