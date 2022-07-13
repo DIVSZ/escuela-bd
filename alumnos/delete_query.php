@@ -21,6 +21,7 @@ $id = $_POST ["id"];
 
 delete_alumnos($name,$apellido,$telefono,$correo,$licenciatura,$cuatrimestre,$estatus,$id);
 
+
 header("Location: index.php");
 
 ?>

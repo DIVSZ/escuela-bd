@@ -58,10 +58,25 @@ insertar_alumnos($name,$apellido,$telefono,$correo,$licenciatura,$cuatrimestre,$
     global $connect;
 
 $consulta = "INSERT INTO alumnos(nombre,apellido,telefono,correo,licenciatura,cuatrimestre,estatus) VALUES ('$name','$apellido','$telefono','$correo','$licenciatura','$cuatrimestre','$estatus')";
+
 if ($correo == $correo)
+
         {
         echo "<font color='red'>  ¡¡ERROR no se pudo insertar el correo!! este correo ya ha sido registrado";
-        }
+        ?><!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+        <body>
+        <a href = "../alumnos/">Regresar</a>
+        </body>
+        </html>
+        <?php   
+    }
 $resultado = mysqli_query($connect, $consulta);
 
        
