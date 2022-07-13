@@ -69,7 +69,7 @@ if ($correo == $correo)
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
+            <title>regresar</title>
         </head>
         <body>
         <a href = "../alumnos/">Regresar</a>
@@ -107,7 +107,20 @@ $consulta = "INSERT INTO profesores(nombre,apellido,telefono,correo,estatus) VAL
 if ($correo == $correo)
         {
         echo "<font color='red'>  ¡¡ERROR no se pudo insertar el correo!! este correo ya ha sido registrado";
-        }
+        ?><!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>regresar</title>
+        </head>
+        <body>
+        <a href = "../profesores/indexP.php">Regresar</a>
+        </body>
+        </html>
+        <?php   
+    }
     $resultado = mysqli_query($connect, $consulta);
 }
 
@@ -121,7 +134,20 @@ update_alumnos($name,$apellido,$telefono,$correo,$licenciatura,$cuatrimestre,$es
     if ($correo == $correo)
         {
         echo "<font color='red'>  ¡¡ERROR no se pudo insertar el correo!! este correo ya ha sido registrado";
-        }
+        ?><!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>regresar</title>
+        </head>
+        <body>
+        <a href = "../alumnos/">Regresar</a>
+        </body>
+        </html>
+        <?php      
+    }
     $resultado = mysqli_query($connect, $consulta);
 }
 
@@ -146,7 +172,20 @@ update_profesores($name,$apellido,$telefono,$correo,$estatus,$id)
     if ($correo == $correo)
         {
         echo "<font color='red'>  ¡¡ERROR no se pudo insertar el correo!! este correo ya ha sido registrado";
-        }
+        ?><!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>regresar</title>
+        </head>
+        <body>
+        <a href = "../profesores/indexP.php">Regresar</a>
+        </body>
+        </html>
+        <?php       
+    }
     $resultado = mysqli_query($connect, $consulta);
 }
 
